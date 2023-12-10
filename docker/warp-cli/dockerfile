@@ -1,0 +1,16 @@
+FROM centos:8
+
+RUN curl http://ipinfo.io/ip
+
+RUN rpm -ivh https://pkg.cloudflareclient.com/cloudflare-release-el8.rpm
+
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* && \
+    sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
+RUN yum makecache -y
+
+RUN yum install cloudflare-warp -y
+
+RUN curl http://ipinfo.io/ip
+
+CMD ["warp-svc"]
