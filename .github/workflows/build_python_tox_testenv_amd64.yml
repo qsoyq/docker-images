@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: qsoyq/python-tox-testenv
+          tags: qsoyq/python-tox-testenv:amd64
           platforms: linux/amd64
           file: "docker/python/python-tox-testenv"
