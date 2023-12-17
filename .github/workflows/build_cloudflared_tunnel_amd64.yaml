@@ -3,7 +3,7 @@ on:
   push:
     paths:
       - 'docker/cloudflared/tunnel_amd64.Dockerfile'
-      - '.github/workflows/build_cloudflared_tunnel.yaml'
+      - '.github/workflows/build_cloudflared_tunnel_amd64.yaml'
 
 jobs:
   docker:
@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: qsoyq/cloudflared-tunnel
+          tags: qsoyq/cloudflared-tunnel:amd64
           platforms: linux/amd64
           file: "docker/cloudflared/tunnel_amd64.Dockerfile"
