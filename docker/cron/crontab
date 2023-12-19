@@ -1,0 +1,5 @@
+* * * * *  (curl -s https://ipinfo.io/ip && echo "\n") >> /root/logs/ipinfo.log  2>&1 
+* * * * *  date >> /root/logs/date.log  2>&1 
+
+# Clean up the email logs of system users.
+* * */14 * * /usr/local/apache2/apachectl restart >/dev/null 2>&1
