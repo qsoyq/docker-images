@@ -34,4 +34,6 @@ RUN ln -s /root/.pyenv/versions/3.11.0/bin/python /usr/local/bin/py311
 RUN ln -s /root/.pyenv/versions/3.11.0/bin/python /usr/local/bin/py3.11.0
 RUN ln -s /usr/local/bin/python3.11 /usr/local/bin/py3.11.6
 
+RUN apt-get install gh -y
+
 CMD bash
