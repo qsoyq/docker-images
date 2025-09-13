@@ -3,4 +3,4 @@ FROM python:3.10.17
 
 RUN pip install pytest-playwright
 
-RUN playwright install chrome
+RUN playwright install
